@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Modifier le livre : {{ livre.titre }}</h1>
+
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}  <!-- Affiche le formulaire avec les champs -->
+    <button type="submit">Mettre à jour</button>
+  </form>
+
+  <a href="{% url 'livres:liste_livres' %}">Retour à la liste des livres</a>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Confirmer la suppression du livre</h1>
+
+  <p>Êtes-vous sûr de vouloir supprimer le livre "{{ livre.titre }}" de l'auteur "{{ livre.auteur }}" ?</p>
+
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Oui, supprimer</button>
+  </form>
+  
+  <a href="{% url 'livres:liste_livres' %}">Retour à la liste des livres</a>
+{% endblock %}

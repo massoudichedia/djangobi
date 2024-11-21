@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Emprunter un livre</h1>
+
+  <form method="post">
+    {% csrf_token %}
+    
+    <div>
+      <label for="nom_emprunteur">Nom de l'emprunteur :</label>
+      <input type="text" name="nom_emprunteur" id="nom_emprunteur" required>
+    </div>
+
+    <div>
+      <input type="submit" value="Emprunter">
+    </div>
+  </form>
+
+  <a href="{% url 'livres:liste_livres' %}">Retour à la liste des livres</a>
+{% endblock %}

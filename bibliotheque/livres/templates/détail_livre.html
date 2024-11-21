@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ livre.titre }} par {{ livre.auteur }}</h1>
+<p>Date de publication : {{ livre.date_publication }}</p>
+<p>Disponible : {% if livre.disponible %} Oui {% else %} Non {% endif %}</p>
+<a href="{% url 'livres:emprunter_livre' livre.id %}">Emprunter ce livre</a>
+{% endblock %}
